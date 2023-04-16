@@ -1,0 +1,74 @@
+.calculator {
+	margin: 20px;
+	padding: 20px;
+	border: 1px solid #ccc;
+	border-radius: 5px;
+	width: 400px;
+    /* display: flex; */
+	justify-content: center;
+	align-items: center;
+}
+
+h1 {
+    color: #db9ff1;
+    font-family: "Arial Black", sans-serif;
+    font-weight: 900;
+    text-shadow: 2px 2px 2px #c2590e;
+    text-align: center;
+  }
+  
+.calculator button {
+	background-color: #6cba76;
+	border: 1px solid #ccc;
+	border-radius: 5px; 
+	padding: 0px;
+	margin: 0px;
+	font-size: 25px;
+	width: 130px;
+	height: 100px;
+	cursor: pointer;
+}
+
+.calculator button.calculate {
+	font-size: 30px;
+}
+
+.calculator .keys {
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	grid-gap: 5px;
+	margin: 10px 0;
+}
+
+/* .calculator .keys button:nth-child(10) {
+	grid-column: 2 / 4;
+} */
+.result-box {
+    width: 400px; /* 设置宽度为 200px */
+    height: 100px; /* 设置高度为 200px */
+    background-color: rgb(239, 132, 132); /* 设置背景颜色为蓝色 */
+    border-radius: 10px; /* 设置圆角为 10px */
+    display: flex; /* 使用 Flex 布局 */
+    flex-direction: column; /* 垂直布局 */
+    justify-content: center; /* 水平和垂直居中 */
+    align-items: center;
+  }
+  
+  .result-row {
+    display: flex; /* 使用 Flex 布局 */
+    flex-direction: row; /* 水平布局 */
+    margin-bottom: 10px; /* 设置行间距为 10px */
+  }
+  
+  .result-count {
+    font-size: 20px; /* 设置字体大小为 20px */
+    margin-left: 10px; /* 设置数字和文字之间的间距 */
+    font-weight: bold; /* 设置加粗字体 */
+    color: white; /* 设置字体颜色为白色 */
+  }
+  
+
+#score {
+	margin-top: 20px;
+	font-size: 20px;
+}

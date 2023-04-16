@@ -1,48 +1,12 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>10以内加法训练</title>
-	<style type="text/css">
-		.calculator {
-			margin: 20px;
-			padding: 20px;
-			border: 1px solid #ccc;
-			border-radius: 5px;
-			width: 400px;
-		}
-
-		.calculator button {
-			background-color: #eee;
-			border: 1px solid #ccc;
-			border-radius: 5px;
-			padding: 10px;
-			margin: 5px;
-			font-size: 24px;
-			width: 80px;
-			height: 80px;
-			cursor: pointer;
-		}
-
-		.calculator button.calculate {
-			font-size: 30px;
-		}
-
-		.calculator .keys {
-			display: grid;
-			grid-template-columns: repeat(3, 1fr);
-			grid-gap: 5px;
-			margin: 10px 0;
-		}
-
-		.calculator .keys button:nth-child(10) {
-			grid-column: 2 / 4;
-		}
-	</style>
+	<title>5以内加法训练</title>
+	<link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
 	<div class="calculator">
-		<h1>10以内加法训练</h1>
-		<p>请计算下列两个数的和：</p>
+		<h1>5以内加法训练</h1>
 		<div id="numbers"></div>
 		<div class="keys">
 			<button onclick="input(1)">1</button>
@@ -56,64 +20,19 @@
 			<button onclick="input(9)">9</button>
 			<button onclick="input(0)">0</button>
 			<button onclick="calculate()">计算</button>
-			<button onclick="reset()">重置</button>
+			<button onclick="reset()">下一题</button>
 		</div>
 		<p id="result"></p>
-	</div>
+        <div class="result-box">
+            <div class="result-row">
+              <span class="result-count" id="correct">0</span>
+            </div>
+            <div class="result-row">
+              <span class="result-count" id="incorrect">0</span>
+            </div>
+          </div>
+    </div>
 
-	<script type="text/javascript">
-		var num1, num2, operator, result;
-		var numbersDiv = document.getElementById("numbers");
-		var resultDiv = document.getElementById("result");
-		var inputArray = [];
-
-		// 随机生成两个数
-		function generateNumbers() {
-			num1 = Math.floor(Math.random() * 10) + 1;
-			num2 = Math.floor(Math.random() * 10) + 1;
-			operator = '+';
-			// operator = Math.random() < 0.5 ? '+' : '-';
-			numbersDiv.innerHTML = num1 + ' ' + operator + ' ' + num2 + ' =';
-			resultDiv.innerHTML = '';
-			inputArray = [];
-		}
-
-		// 输入数字
-		function input(num) {
-		if (inputArray.length < 2 || (inputArray.length === 1 && num === 0)) {
-			inputArray.push(num);
-			resultDiv.innerHTML = inputArray.join('');
-		}
-		}
-
-
-		// 计算结果
-		function calculate() {
-			if (inputArray.length == 1) {
-				result = inputArray[0]
-			}
-			if (inputArray.length == 2) {
-				var inputNum = parseInt(inputArray.join(''));
-				if (operator == '+') {
-					result = num1 + num2;
-				} else {
-					result = num1 - num2;
-}
-if (inputNum == result) {
-resultDiv.innerHTML = '恭喜你，回答正确！';
-} else {
-resultDiv.innerHTML = '很遗憾，回答错误。正确答案是 ' + result;
-}
-}
-}
-
-	// 重置
-	function reset() {
-		generateNumbers();
-	}
-
-	// 初始化页面
-	generateNumbers();
-</script>
+	<script type="text/javascript" src="script.js"></script>
 </body>
 </html>
